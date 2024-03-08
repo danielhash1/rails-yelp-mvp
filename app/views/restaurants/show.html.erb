@@ -1,0 +1,33 @@
+<h1> <%= @restaurant.name %> </h1>
+
+<p> <%= @restaurant.address %> </p>
+<p> <%= @restaurant.category %> </p>
+
+<div>
+
+  <p>Rating:</p>
+
+  <ul>
+    <% @restaurant_reviews.each do |review|%>
+    <li> <%= review.content %>
+    <% review.rating.times do %>
+     <span>⭐️</span>
+     <% end %>
+    </li>
+    <% end %>
+    </ul>
+</div>
+
+<%# feedback %>
+<h1>Leave your feedback</h1>
+
+<p>right now!</p>
+
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <%= f.label "Leave us your feedback" %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "<- Back", restaurants_path %>

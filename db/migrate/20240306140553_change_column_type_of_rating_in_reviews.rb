@@ -3,3 +3,6 @@ class ChangeColumnTypeOfRatingInReviews < ActiveRecord::Migration[7.1]
     change_column :reviews, :rating, :integer
   end
 end
+
+
+rails g migration ChangeColumnPhoneNumberInRestaurants 

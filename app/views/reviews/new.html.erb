@@ -1,0 +1,10 @@
+<h1>Leave your feedback</h1>
+
+<p>right now!</p>
+
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <%= f.label "Leave us your feedback" %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit %>
+<% end %>
